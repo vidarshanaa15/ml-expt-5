@@ -34,6 +34,7 @@ ml-expt-5/
 │   └── expt-5_7_1.png
 ├── Assignment5_ML_Vidarshanaa.pdf  # Lab report
 ├── Assignment5_ML_Vidarshanaa.tex  # Latex report
+├── expt5.bib                       # Citations
 └── requirements.txt                # Python packages and versions used
 ```
 

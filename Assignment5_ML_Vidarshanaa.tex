@@ -893,13 +893,20 @@ MLP (best):
     The activation function and optimizer were most influential. ReLU with Adam consistently outperformed other settings. Learning rate had a large effect: 0.001 gave stable convergence, while 0.01 caused divergence (val\_acc dropping to nearly 0). Batch size also mattered: 32 gave better generalization than 64.
 
     \item \textbf{Did optimizer choice (SGD vs Adam) affect convergence?} \\
-    Yes. SGD yielded much lower accuracies (as low as 2–25\%), depending on learning rate. Adam provided faster and more stable convergence, achieving the best validation accuracy of 28.8\% with ReLU and lr=0.001.
+Yes. SGD yielded much lower accuracies (as low as 2--25\%), depending on learning rate. 
+Adam provided faster and more stable convergence, achieving the best validation accuracy 
+of 28.8\% with ReLU and lr=0.001 \cite{zhang2019adam}.
+
 
     \item \textbf{Did adding more hidden layers always improve results? Why or why not?} \\
-    No. Increasing hidden layers initially helped the MLP learn more complex patterns, but beyond a certain point accuracy plateaued and risk of overfitting grew. With limited dataset size and training epochs, deeper models did not guarantee better results.
+No. Increasing hidden layers initially helped the MLP learn more complex patterns, but beyond a certain point accuracy plateaued and risk of overfitting grew \cite{uzair2020hidden}. With limited dataset size and training epochs, deeper models did not guarantee better results.
+
 
     \item \textbf{Did MLP show overfitting? How could it be mitigated?} \\
-    The MLP did not show strong signs of overfitting, as the test accuracy (29.8\% ) was slightly higher than the validation accuracy (28.8\% ). However, the risk of overfitting remains, and could be mitigated with dropout, regularization, or early stopping if scaling to deeper models.
+The MLP did not show strong signs of overfitting, as the test accuracy (29.8\%) was slightly higher than the validation accuracy (28.8\%). 
+However, the risk of overfitting remains, and could be mitigated with dropout \cite{srivastava2014dropout}, regularization techniques \cite{santos2022regularization}, or early stopping if scaling to deeper models.
+
+
 \end{itemize}
 
 \vspace{1cm}
@@ -931,5 +938,9 @@ MLP (ReLU + Adam, lr=0.001, batch=32) & 0.2977 & 0.3207 & 0.2977 & 0.2752 \\ \hl
 \noindent
 \textbf{GitHub Repository:} \\
 \href{https://github.com/vidarshanaa15/ml-expt-5}{https://github.com/vidarshanaa15/ml-expt-5}
+
+\vspace{1cm}
+\bibliographystyle{ieeetr} % or whatever style you vibe with
+\bibliography{expt5}  % name of your .bib file (no .bib extension)
 
 \end{document}
